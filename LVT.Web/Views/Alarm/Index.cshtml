@@ -1,0 +1,271 @@
+﻿@model IEnumerable<LVT.Models.Entities.VehicleAlarm>
+
+
+<div class="content-header">
+    <div class="d-flex align-items-center">
+        <div class="mr-auto">
+            <h3 class="page-title">All Alarms</h3>
+        </div>
+    </div>
+</div>
+
+
+<section class="content">
+
+    <div class="box">
+        <div class="box-body">
+            <form role="form">
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-lg-2">
+                            <label>Alarm Type</label>
+                            <select class="form-control">
+                                <option>Facial recognition</option>
+                                <option>Live Vehicle Tracking</option>
+                                <option>option 3</option>
+                                <option>option 4</option>
+                                <option>option 5</option>
+                            </select>
+                        </div>
+                        <div class="col-lg-2">
+                            <label>Source</label>
+                            <input type="text" class="form-control" placeholder="Enter Source">
+                        </div>
+                        <div class="col-lg-2">
+                            <label>Generation Time (From)</label>
+                            <input type="date" class="form-control">
+                        </div>
+                        <div class="col-lg-2">
+                            <label>Generation Time (To)</label>
+                            <input type="date" class="form-control">
+                        </div>
+                        <div class="col-lg-2">
+                            <label>Status</label>
+                            <select class="form-control">
+                                <option>All</option>
+                                <option>option 2</option>
+                                <option>option 3</option>
+                                <option>option 4</option>
+                                <option>option 5</option>
+                            </select>
+                        </div>
+                        <div class="col-lg-2" style="margin-top: 28px;">
+                            <button type="button" class="btn btn-primary btn-sm mb-5"><i class="fa fa-search"></i>&nbsp;Search</button>
+                            <button type="button" class="btn btn-warning btn-sm mb-5"><i class="fa fa-undo"></i>&nbsp;Reset</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-1 text-center" style="margin-top: 8px;">
+            <div class="checkbox checkbox-success">
+                <input id="checkbox1" type="checkbox">
+                <label for="checkbox1"> Select All</label>
+            </div>
+        </div>
+        <div class=col-lg-2>
+            <a class="btn"><i class="fa fa-refresh"></i>&nbsp;Refresh</a>
+            <a class="btn"><i class="fa fa-download"></i>&nbsp;Export</a>
+        </div>
+    </div>
+    <div class="row  mt-4">
+        <div class="col-12 box-deck">
+            <div class="box">
+                <img class="box-img-top" src="../images/person-zoom.png" alt="box image cap" data-toggle="modal" data-target=".bs-example-modal-lg" class="model_img img-fluid">
+                <div class="box-body">
+                    <ul class="list-unstyled">
+                        <li><span class="text-muted">Alarm Type :</span> <span class="text-warning">Facial recognition blacklist target.</span></li>
+                        <li><span class="text-muted">Alarm Content :</span> <span class="">558 Qazi Town Bus Stop..</span></li>
+                        <li><span class="text-muted">Generation Time :</span> <span class="">2019-05-11 10:55:21</span></li>
+                        <li><span class="text-muted">Alarm Algorithm :</span> <span class="">yitu_face_global_sdk</span></li>
+                        <li><span class="text-muted">Status :</span> <span class="text-danger">Unprocessed</span></li>
+                    </ul>
+                    <div class="row mt-4">
+                        <div class="col-lg-6">
+                            <div class="checkbox checkbox-success">
+                                <input id="checkbox1" type="checkbox">
+                                <label for="checkbox1"></label>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 text-right">
+                            <a class="text-white"><i class="fa fa-edit"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @foreach (var item in Model)
+            {
+
+                <div class="box">
+                    <img class="box-img-top model_img img-fluid" src="@item.ImagePath" alt="box image cap" data-toggle="modal" data-target=".bs-example-modal-lg0" onclick="ShowModal('@item.ImagePath','@item.AlarmLocation','@item.AlarmGenerationTime','@item.Status')">
+                    <div class="box-body">
+                        <ul class="list-unstyled">
+                            <li><span class="text-muted">Alarm Type :</span> <span class="text-warning">Live Vehicle Tracking</span></li>
+                            <li><span class="text-muted">Alarm Content :</span> <span class="">@item.AlarmLocation</span></li>
+                            <li><span class="text-muted">Generation Time :</span> <span class="">@item.AlarmGenerationTime</span></li>
+                            <li><span class="text-muted">Alarm Algorithm :</span> <span class="">@item.AlarmLocation</span></li>
+                            <li><span class="text-muted">Status :</span> <span class="text-danger">@item.Status</span></li>
+                        </ul>
+                        <div class="row mt-4">
+                            <div class="col-lg-6">
+                                <div class="checkbox checkbox-success">
+                                    <input id="checkbox1" type="checkbox">
+                                    <label for="checkbox1"></label>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 text-right">
+                                <a class="text-white"><i class="fa fa-edit"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+            @*<div class="box">
+                    <img class="box-img-top model_img img-fluid" src="../images/vehicle-zoom0.png" alt="box image cap" data-toggle="modal" data-target=".bs-example-modal-lg0">
+                    <div class="box-body">
+                        <ul class="list-unstyled">
+                            <li><span class="text-muted">Alarm Type :</span> <span class="text-warning">Live Vehicle Tracking</span></li>
+                            <li><span class="text-muted">Alarm Content :</span> <span class="">125-4-Firdous Market P2</span></li>
+                            <li><span class="text-muted">Generation Time :</span> <span class="">2019-10-01 12:05:21</span></li>
+                            <li><span class="text-muted">Alarm Algorithm :</span> <span class="">yitu_face_global_sdk</span></li>
+                            <li><span class="text-muted">Status :</span> <span class="text-danger">Unprocessed</span></li>
+                        </ul>
+                        <div class="row mt-4">
+                            <div class="col-lg-6">
+                                <div class="checkbox checkbox-success">
+                                    <input id="checkbox1" type="checkbox">
+                                    <label for="checkbox1"></label>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 text-right">
+                                <a class="text-white"><i class="fa fa-edit"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>*@
+            <div class="box">
+                <img class="box-img-top" src="../images/vehicle3-zoom.png" alt="box image cap" data-toggle="modal" data-target=".bs-example-modal-lg3" class="model_img img-fluid">
+                <div class="box-body">
+                    <ul class="list-unstyled">
+                        <li><span class="text-muted">Alarm Type :</span> <span class="text-warning">Live Vehicle Tracking</span></li>
+                        <li><span class="text-muted">Alarm Content :</span> <span class="">125-4-Regal Chowk P2</span></li>
+                        <li><span class="text-muted">Generation Time :</span> <span class="">2019-10-01 12:05:21</span></li>
+                        <li><span class="text-muted">Alarm Algorithm :</span> <span class="">yitu_face_global_sdk</span></li>
+                        <li><span class="text-muted">Status :</span> <span class="text-danger">Unprocessed</span></li>
+                    </ul>
+                    <div class="row mt-4">
+                        <div class="col-lg-6">
+                            <div class="checkbox checkbox-success">
+                                <input id="checkbox1" type="checkbox">
+                                <label for="checkbox1"></label>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 text-right">
+                            <a class="text-white"><i class="fa fa-edit"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <img class="box-img-top" src="../images/vehicle2-zoom.png" alt="box image cap" data-toggle="modal" data-target=".bs-example-modal-lg2" class="model_img img-fluid">
+                <div class="box-body">
+                    <ul class="list-unstyled">
+                        <li><span class="text-muted">Alarm Type :</span> <span class="text-warning">Live Vehicle Tracking.</span></li>
+                        <li><span class="text-muted">Alarm Content :</span> <span class="">3229-4-Bashir Sons P2</span></li>
+                        <li><span class="text-muted">Generation Time :</span> <span class="">2019-05-11 10:50:21</span></li>
+                        <li><span class="text-muted">Alarm Algorithm :</span> <span class="">yitu_face_global_sdk</span></li>
+                        <li><span class="text-muted">Status :</span> <span class="text-danger">Unprocessed</span></li>
+                    </ul>
+                    <div class="row mt-4">
+                        <div class="col-lg-6">
+                            <div class="checkbox checkbox-success">
+                                <input id="checkbox1" type="checkbox">
+                                <label for="checkbox1"></label>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 text-right">
+                            <a class="text-white"><i class="fa fa-edit"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <img class="box-img-top" src="../images/vehicle-zoom.png" alt="box image cap" data-toggle="modal" data-target=".bs-example-modal-lg1" class="model_img img-fluid">
+                <div class="box-body">
+                    <ul class="list-unstyled">
+                        <li><span class="text-muted">Alarm Type :</span> <span class="text-warning">Live Vehicle Tracking</span></li>
+                        <li><span class="text-muted">Alarm Content :</span> <span class="">3229-4-Lahore College for..</span></li>
+                        <li><span class="text-muted">Generation Time :</span> <span class="">2019-10-11 07:55:21</span></li>
+                        <li><span class="text-muted">Alarm Algorithm :</span> <span class="">yitu_face_global_sdk</span></li>
+                        <li><span class="text-muted">Status :</span> <span class="text-danger">Unprocessed</span></li>
+                    </ul>
+                    <div class="row mt-4">
+                        <div class="col-lg-6">
+                            <div class="checkbox checkbox-success">
+                                <input id="checkbox1" type="checkbox">
+                                <label for="checkbox1"></label>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 text-right">
+                            <a class="text-white"><i class="fa fa-edit"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bs-example-modal-lg0" tabindex="-1" role="dialog" id aria-labelledby="myLargeModalLabel" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog modal-lg vehicle-modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myLargeModalLabel">Alarms</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <img id="ImgUrl" width="100%">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <ul class="list-unstyled mt-4">
+                                <li><span class="text-muted">Alarm Type :</span> <span id="alarmType" class="text-warning"></span></li>
+                                <li><span class="text-muted">Alarm Content :</span> <span id="alarmContent" class=""></span></li>
+                                <li><span class="text-muted">Generation Time :</span> <span id="GenerationTime" class=""></span></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-6">
+                            <ul class="list-unstyled mt-4">
+                                <li><span class="text-muted">Alarm Algorithm :</span> <span id="alarmAlgorithm" class=""></span></li>
+                                <li><span class="text-muted">Status :</span> <span id="alarmStatus" class="text-danger"></span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer text-right" style="padding-top: 13px !important;">
+                    <a href="/mdt" type="button" class="btn btn-secondary waves-effect text-left btn-sm">Process to MDT</a>
+                    <button type="button" class="btn btn-secondary waves-effect text-left btn-sm">Process to PUCAR</button>
+                    <button type="button" class="btn btn-secondary waves-effect text-left btn-sm">Discard</button>
+                    <button type="button" class="btn btn-secondary waves-effect text-left btn-sm" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary waves-effect text-left btn-sm" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<script>
+    function ShowModal(ImgUrl, alarmContent, GenerationTime, alarmStatus) {
+
+        $('#ImgUrl').attr('src', ImgUrl);
+        $('#alarmContent').text(alarmContent);
+        $('#GenerationTime').text(GenerationTime);
+        $('#alarmAlgorithm').text(alarmAlgorithm);
+        $('#alarmStatus').text(alarmStatus);
+        // $('#myModal').modal('show');
+    }
+</script>

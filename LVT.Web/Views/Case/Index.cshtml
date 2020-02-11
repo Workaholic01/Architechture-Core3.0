@@ -1,0 +1,190 @@
+﻿<div class="content-header">
+    <div class="d-flex align-items-center">
+        <div class="mr-auto">
+            <h3 class="page-title">All Cases</h3>
+        </div>
+    </div>
+</div>
+<section class="content">
+    <div class="box">
+        <div class="box-body">
+            <form role="form">
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-lg-2">
+                            <label>From</label>
+                            <input type="date" class="form-control">
+                        </div>
+                        <div class="col-lg-2">
+                            <label>To</label>
+                            <input type="date" class="form-control">
+                        </div>
+                        <div class="col-lg-2">
+                            <label>Case No.</label>
+                            <input type="text" class="form-control" placeholder="Enter Case Number">
+                        </div>
+                        <div class="col-lg-2">
+                            <label>Vehicle No.</label>
+                            <input type="text" class="form-control" placeholder="Enter Vehicle Number">
+                        </div>
+                        <div class="col-lg-2">
+                            <label>Team ID</label>
+                            <input type="text" class="form-control" placeholder="Enter Case Number">
+                        </div>
+                        <div class="col-lg-2" style="margin-top: 28px;">
+                            <button type="button" class="btn btn-primary btn-sm mb-5"><i class="fa fa-search"></i>&nbsp;Search</button>
+                            <button type="button" class="btn btn-warning btn-sm mb-5"><i class="fa fa-undo"></i>&nbsp;Reset</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 col-12 connectedSortable">
+            <div class="box">
+                <div class="box-header with-border">
+                    <h4 class="box-title">Case List</h4>
+                </div>
+                <div class="box-body">
+                    <div class="table-responsive">
+                        <table id="invoice-list" class="table table-hover no-wrap" data-page-size="10">
+                            <thead>
+                                <tr>
+                                    <th>#Alarm</th>
+                                    <th>Vehicle No</th>
+                                    <th>Camera ID</th>
+                                    <th>Team ID</th>
+                                    <th>Team Name</th>
+                                    <th>Location</th>
+                                    <th>Status</th>
+                                    <th>Time</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>#5010</td>
+                                    <td>LEO 8544 </td>
+                                    <td>012</td>
+                                    <td>Team 009</td>
+                                    <td>Team ABC</td>
+                                    <td>Regal Chowk</td>
+                                    <td><span class="label label-danger">Pending</span> </td>
+                                    <td>15-Jan 10:20:58</td>
+                                    <td>
+                                        <a href="#"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#5011</td>
+                                    <td>LEO 8544 </td>
+                                    <td>321</td>
+                                    <td>Team 009</td>
+                                    <td>Team ABC</td>
+                                    <td>Model Town Park</td>
+                                    <td><span class="label label-success">Completed</span> </td>
+                                    <td>15-Sep 10:20:58</td>
+                                    <td>
+                                        <a href="#"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#5012</td>
+                                    <td>LEO 8544 </td>
+                                    <td>432</td>
+                                    <td>Team 112</td>
+                                    <td>Team ABC</td>
+                                    <td>Bhati Gate</td>
+                                    <td><span class="label label-danger">Pending</span> </td>
+                                    <td>15-Jun 10:20:58</td>
+                                    <td>
+                                        <a href="#"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#5013</td>
+                                    <td>LEO 8544 </td>
+                                    <td>012</td>
+                                    <td>Team 112</td>
+                                    <td>Team ABC</td>
+                                    <td>Kalma Chowk</td>
+                                    <td><span class="label label-success">Completed</span> </td>
+                                    <td>15-May 10:20:58</td>
+                                    <td>
+                                        <a href="#"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#5014</td>
+                                    <td>LEO 8544 </td>
+                                    <td>465</td>
+                                    <td>Team 112</td>
+                                    <td>Team ABC</td>
+                                    <td>Bhati Gate</td>
+                                    <td><span class="label label-primary">Dispatched</span> </td>
+                                    <td>15-Mar 10:20:58</td>
+                                    <td>
+                                        <a href="#"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#5015</td>
+                                    <td>LEO 8544 </td>
+                                    <td>012</td>
+                                    <td>Team 112</td>
+                                    <td>Team ABC</td>
+                                    <td>Canal Station</td>
+                                    <td><span class="label label-primary">Dispatched</span> </td>
+                                    <td>15-Aug 10:20:58</td>
+                                    <td>
+                                        <a href="#"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#5016</td>
+                                    <td>LEO 8544 </td>
+                                    <td>644</td>
+                                    <td>Team 006</td>
+                                    <td>Team ABC</td>
+                                    <td>Walton Rd</td>
+                                    <td><span class="label label-success">Completed</span> </td>
+                                    <td>15-Aug 10:20:58</td>
+                                    <td>
+                                        <a href="#"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#5010</td>
+                                    <td>LEO 8544 </td>
+                                    <td>675</td>
+                                    <td>Team 009</td>
+                                    <td>Team ABC</td>
+                                    <td>Packages Mall</td>
+                                    <td><span class="label label-danger">Pending</span> </td>
+                                    <td>15-Jan 10:20:58</td>
+                                    <td>
+                                        <a href="#"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#5011</td>
+                                    <td>LEO 8544 </td>
+                                    <td>678</td>
+                                    <td>Team 009</td>
+                                    <td>Team ABC</td>
+                                    <td>Ichra Stop</td>
+                                    <td><span class="label label-success">Completed</span> </td>
+                                    <td>15-Sep 10:20:58</td>
+                                    <td>
+                                        <a href="#"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
